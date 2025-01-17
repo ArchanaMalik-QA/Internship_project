@@ -1,12 +1,18 @@
 from selenium import webdriver
-#from selenium.webdriver.chrome.service import Service
-#from webdriver_manager.chrome import ChromeDriverManager
-#from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.firefox.options import Options
-from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.support.wait import WebDriverWait
 from app.application import Application
+
+#Google Chrome Setting
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+
+#firefox setting
+# from selenium.webdriver.firefox.service import Service
+# from selenium.webdriver.firefox.options import Options
+# from webdriver_manager.firefox import GeckoDriverManager
+
+
 
 
 
@@ -15,24 +21,24 @@ def browser_init(context):
     :param context: Behave context
     """
     # #Google Chrome
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     ##Firefox
-    driver_path = GeckoDriverManager().install()
-    service = Service(driver_path)
-    firefox_options = Options()
-    context.driver = webdriver.Firefox(service=service, options=firefox_options)
+    # driver_path = GeckoDriverManager().install()
+    # service = Service(driver_path)
+    # firefox_options = Options()
+    # context.driver = webdriver.Firefox(service=service, options=firefox_options)
 
     ### HEADLESS MODE ####
-    # options = webdriver.ChromeOptions()
-    # options.add_argument('headless')
-    # service = Service(ChromeDriverManager().install())
-    # context.driver = webdriver.Chrome(
-    #     options=options,
-    #     service=service
-    # )
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    service = Service(ChromeDriverManager().install())
+    context.driver = webdriver.Chrome(
+        options=options,
+        service=service
+    )
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
