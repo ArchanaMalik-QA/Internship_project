@@ -13,9 +13,9 @@ class PaginationNumber(BasePage):
     CURRENT_PAGE = (By.CSS_SELECTOR, "[wized='currentPageMarket']")
 
     def go_to_finalpage_pagination(self, *locator):
-        # self.driver.execute_script("window.scrollBy(0,2000)", "")
-        # sleep(4)
-        self.driver.find_element(*self.TOTAL_PAGES_NUMBER).click()
+        self.driver.execute_script("window.scrollBy(0,2000)", "")
+        sleep(5)
+        #self.driver.find_element(*self.TOTAL_PAGES_NUMBER).click()
         total_pages = int(self.driver.find_element(*self.TOTAL_PAGES_NUMBER).text)
         current_page = int(self.driver.find_element(*self.CURRENT_PAGE).text)
         print(f"Current pages: {current_page}")
@@ -40,8 +40,8 @@ class PaginationNumber(BasePage):
 
 
     def go_backto_firstpage_pagination(self, *locator):
-        # sleep(4)
-        # self.driver.execute_script("window.scrollBy(0,2000)", "")
+        sleep(5)
+        #self.driver.execute_script("window.scrollBy(0,2000)", "")
         self.driver.find_element(*self.TOTAL_PAGES_NUMBER).click()
         total_pages = int(self.driver.find_element(*self.TOTAL_PAGES_NUMBER).text)
         current_page = int(self.driver.find_element(*self.CURRENT_PAGE).text)
