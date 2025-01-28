@@ -16,7 +16,8 @@ class MarketPage(BasePage):
         sleep(10)
 
     def open_event_companies(self):
-        self.driver.find_element(By.CSS_SELECTOR, "a#w-node-_26c16ce9-d3b4-be5f-f1ca-4a524c830527-7f66deb2").click()
+        elements = self.driver.find_elements(*self.MARKET_LINK)
+        elements[1].click()
         sleep(10)
 
 
