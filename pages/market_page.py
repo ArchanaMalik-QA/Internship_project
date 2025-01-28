@@ -11,6 +11,15 @@ class MarketPage(BasePage):
         self.open_url('https://soft.reelly.io/market-companies')
         sleep(10)
 
+    def open_event_link(self):
+        self.driver.find_element(By.CSS_SELECTOR, "[wized='mobileTabGame'],[text='Events']").click()
+        sleep(10)
+
+    def open_event_companies(self):
+        self.driver.find_element(By.CSS_SELECTOR, "a#w-node-_26c16ce9-d3b4-be5f-f1ca-4a524c830527-7f66deb2").click()
+        sleep(10)
+
+
     def click_market_link(self):
         self.driver.find_element(By.CSS_SELECTOR, "[href='/market-companies']").click()
         print("market link clicked")
