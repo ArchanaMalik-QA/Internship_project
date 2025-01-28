@@ -7,6 +7,10 @@ class MarketPage(BasePage):
     MARKET_TEXT = (By.CSS_SELECTOR, "div.page-title.agency")
     MARKET_LINK = (By.CSS_SELECTOR, "[href='/market-companies']")
 
+    def open_market_companies(self):
+        self.open_url('https://soft.reelly.io/market-companies')
+        sleep(10)
+
     def click_market_link(self):
         self.driver.find_element(By.CSS_SELECTOR, "[href='/market-companies']").click()
         print("market link clicked")

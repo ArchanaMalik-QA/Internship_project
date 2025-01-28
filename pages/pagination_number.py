@@ -14,7 +14,8 @@ class PaginationNumber(BasePage):
 
     def go_to_finalpage_pagination(self, *locator):
         self.driver.execute_script("window.scrollBy(0,2000)", "")
-        sleep(5)
+        sleep(6)
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         #self.driver.find_element(*self.TOTAL_PAGES_NUMBER).click()
         total_pages = int(self.driver.find_element(*self.TOTAL_PAGES_NUMBER).text)
         current_page = int(self.driver.find_element(*self.CURRENT_PAGE).text)
@@ -29,7 +30,8 @@ class PaginationNumber(BasePage):
             sleep(6)
             print(f"Successfully loaded page {page}.")
             if page != total_pages:
-                # self.driver.execute_script("window.scrollBy(0,2000)", "")
+                #self.driver.execute_script("window.scrollBy(0,2000)", "")
+                self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                 next_page_arrow_button = wait.until(EC.visibility_of_element_located(self.NEXT_PAGE_ARROW_BUTTON))
                 next_page_arrow_button.click()
         print("Successfully reached the last page.")
@@ -41,7 +43,7 @@ class PaginationNumber(BasePage):
 
     def go_backto_firstpage_pagination(self, *locator):
         sleep(5)
-        #self.driver.execute_script("window.scrollBy(0,2000)", "")
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         self.driver.find_element(*self.TOTAL_PAGES_NUMBER).click()
         total_pages = int(self.driver.find_element(*self.TOTAL_PAGES_NUMBER).text)
         current_page = int(self.driver.find_element(*self.CURRENT_PAGE).text)
@@ -53,11 +55,13 @@ class PaginationNumber(BasePage):
             # Locate and interact with the page input or buttons (update selector as needed)
             wait = WebDriverWait(self.driver, 15)
             sleep(6)
-            # self.driver.execute_script("window.scrollBy(0,2000)", "")
+
             previous_page_arrow_button = wait.until(EC.visibility_of_element_located(self.PREVIOUS_PAGE_ARROW_BUTTON))
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             print(f"Successfully loaded page {page}.")
             if page != 1:
                 previous_page_arrow_button.click()
+                self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         print("Successfully reached the last page.")
         current_page_after_loop = int(self.driver.find_element(*self.CURRENT_PAGE).text)
         print(f"Current pages after loop: {current_page_after_loop}")
