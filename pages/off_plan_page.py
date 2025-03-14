@@ -39,4 +39,3 @@ class OffPlanPage(BasePage):
             print(f"Expected: {expected_result}, Actual: {actual_result}")
             assert expected_result in actual_result, f"Assertion failed: Expected '{expected_result}' in '{actual_result}'"
 
-sleep(2)
