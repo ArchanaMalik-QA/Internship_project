@@ -16,3 +16,4 @@ def click_sale_status_and_select_announced(context):
 def verify_offplan_sale_status_announced_open_successfully(context):
    context.app.off_plan_page.verify_offplan_sale_status_announced_open_successfully()
 
+# pushing to git
