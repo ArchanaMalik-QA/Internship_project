@@ -16,4 +16,10 @@ def click_sale_status_and_select_announced(context):
 def verify_offplan_sale_status_announced_open_successfully(context):
    context.app.off_plan_page.verify_offplan_sale_status_announced_open_successfully()
 
-# pushing to git
+@then('Filter by sale status as Presale')
+def click_sale_status_and_select_presale(context):
+    context.app.off_plan_page.click_sale_status_and_select_presale()
+
+@then('Verify each product contains the Presale')
+def verify_offplan_sale_status_presale_open_successfully(context):
+   context.app.off_plan_page.verify_offplan_sale_status_presale_open_successfully()
