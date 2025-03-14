@@ -24,3 +24,12 @@ def click_sale_status_and_select_presale(context):
 @then('Verify each product contains the Presale')
 def verify_offplan_sale_status_presale_open_successfully(context):
    context.app.off_plan_page.verify_offplan_sale_status_presale_open_successfully()
+
+# Scenario 30:  User can filter by Out of stock
+@then('Filter by sale status as Out of stock')
+def click_sale_status_and_select_outofstock(context):
+    context.app.off_plan_page.click_sale_status_and_select_outofstock()
+
+@then('Verify each product contains the Out of stock')
+def verify_offplan_sale_status_outofstock_open_successfully(context):
+   context.app.off_plan_page.verify_offplan_sale_status_outofstock_open_successfully()

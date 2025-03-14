@@ -34,5 +34,15 @@ Feature: Tests for Main page UI
     Then Filter by sale status as Presale
     Then Verify each product contains the Presale
 
+  # Scenario 30 : User can filter by Out of stock
+    Scenario: User can filter by Out of stock
+    Given Open the main page
+    When Enter the email
+    Then Enter the password
+    Then Click continue button
+    Then User click on off-plan link at the left side in menu
+    Then Verify off_plan page opened
+    Then Filter by sale status as Out of stock
+    Then Verify each product contains the Out of stock
 
 

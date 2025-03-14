@@ -8,6 +8,7 @@ class OffPlanPage(BasePage):
     OFFPLAN_LINK = (By.CSS_SELECTOR, "div.menu-button-text")
     OFFPLAN_ANNOUNCED = (By.CSS_SELECTOR, "[wized='projectStatus'],[w-el-text='Status'],[text='Announced']")
     OFFPLAN_PRESALE = (By.CSS_SELECTOR, "[wized='projectStatus'],[w-el-text='Status'],[text='Presale(EOI)']")
+    OFFPLAN_OUTOFSTOCK = (By.CSS_SELECTOR, "[wized='projectStatus'],[w-el-text='Status'],[text='Out of stock']")
 
 
     def click_off_plan_link(self):
@@ -50,6 +51,22 @@ class OffPlanPage(BasePage):
     def verify_offplan_sale_status_presale_open_successfully(self):
         expected_result = "Presale(EOI)"
         elements = self.driver.find_elements(*self.OFFPLAN_PRESALE) # Use find_elements to get multiple elements
+
+        for element in elements:
+            actual_result = element.text  # Ensure text is stripped of leading/trailing spaces
+            print(f"Expected: {expected_result}, Actual: {actual_result}")
+            assert expected_result in actual_result, f"Assertion failed: Expected '{expected_result}' in '{actual_result}'"
+
+# Scenario 30
+    def click_sale_status_and_select_outofstock(self):
+        elements = self.driver.find_elements(By.CSS_SELECTOR,"[id='Location-2'],[wized='saleStatusFilter'],[value='Out of stock']")
+        elements[1].click()
+        sleep(10)
+
+
+    def verify_offplan_sale_status_outofstock_open_successfully(self):
+        expected_result = "Out of stock"
+        elements = self.driver.find_elements(*self.OFFPLAN_OUTOFSTOCK) # Use find_elements to get multiple elements
 
         for element in elements:
             actual_result = element.text  # Ensure text is stripped of leading/trailing spaces
