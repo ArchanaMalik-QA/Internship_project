@@ -23,7 +23,7 @@ Feature: Tests for Main page UI
     Then Filter by sale status as Announced
     Then Verify each product contains the Announced
 
-  # Scenario 29 : User can filter by Presale
+  # Scenario 29 :  User can filter by Presale
     Scenario: User can filter by Presale
     Given Open the main page
     When Enter the email
