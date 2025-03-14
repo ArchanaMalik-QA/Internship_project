@@ -8,6 +8,7 @@ def click_off_plan_link(context):
 def verify_offplan_link_open_successfully(context):
     context.app.off_plan_page.verify_offplan_link_open_successfully()
 
+# Scenario 28: User can filter by Announced
 @then('Filter by sale status as Announced')
 def click_sale_status_and_select_announced(context):
     context.app.off_plan_page.click_sale_status_and_select_announced()
@@ -16,6 +17,7 @@ def click_sale_status_and_select_announced(context):
 def verify_offplan_sale_status_announced_open_successfully(context):
    context.app.off_plan_page.verify_offplan_sale_status_announced_open_successfully()
 
+# Scenario 29: User can filter by Presale
 @then('Filter by sale status as Presale')
 def click_sale_status_and_select_presale(context):
     context.app.off_plan_page.click_sale_status_and_select_presale()

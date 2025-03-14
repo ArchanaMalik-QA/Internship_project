@@ -12,7 +12,7 @@ Feature: Tests for Main page UI
     Then Go back to the first page using the pagination button
 
 
-  # Scenario 29 : User can filter by Presale
+  # Scenario 28 : User can filter by Announced
     Scenario: User can open off-plan tab and check for sale status as announced
     Given Open the main page
     When Enter the email
@@ -23,7 +23,7 @@ Feature: Tests for Main page UI
     Then Filter by sale status as Announced
     Then Verify each product contains the Announced
 
-  # Scenario 29 : User can filter by Presale
+  # Scenario 29:User can filter by Presale
     Scenario: User can filter by Presale
     Given Open the main page
     When Enter the email

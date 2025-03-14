@@ -25,7 +25,7 @@ class OffPlanPage(BasePage):
         assert expected_result in actual_result, f'Expected {expected_result} match actual {actual_result}'
         self.verify_partial_text('Off-plan', *self.OFFPLAN_TEXT)
 
-# Scenario 28
+# Scenario 28: User can filter by Announced
     def click_sale_status_and_select_announced(self):
        elements = self.driver.find_elements(By.CSS_SELECTOR, "[id='Location-2'],[wized='saleStatusFilter'],[value='Announced']")
        elements[1].click()
@@ -41,7 +41,7 @@ class OffPlanPage(BasePage):
             print(f"Expected: {expected_result}, Actual: {actual_result}")
             assert expected_result in actual_result, f"Assertion failed: Expected '{expected_result}' in '{actual_result}'"
 
-# Scenario 29
+# Scenario 29: User can filter by Presale
     def click_sale_status_and_select_presale(self):
        self.driver.find_element(By.CSS_SELECTOR, "[id='Location-2'],[wized='saleStatusFilter'].select-field-3 w-select").click()
        sleep(10)
