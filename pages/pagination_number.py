@@ -7,10 +7,29 @@ from pages.base_page import BasePage
 
 class PaginationNumber(BasePage):
 
-    TOTAL_PAGES_NUMBER = (By.CSS_SELECTOR, "[wized='totalPageMarket']")
-    NEXT_PAGE_ARROW_BUTTON = (By.CSS_SELECTOR,"[wized='nextPageMarket']")
-    PREVIOUS_PAGE_ARROW_BUTTON = (By.CSS_SELECTOR, "[wized='previousPageMarket']")
-    CURRENT_PAGE = (By.CSS_SELECTOR, "[wized='currentPageMarket']")
+    #market page elements
+    #TOTAL_PAGES_NUMBER = (By.CSS_SELECTOR, "[wized='totalPageMarket']")
+
+    # secondary page elements
+    TOTAL_PAGES_NUMBER = (By.CSS_SELECTOR, "[wized='totalPageProperties']")
+
+    #market page elements
+    #NEXT_PAGE_ARROW_BUTTON = (By.CSS_SELECTOR,"[wized='nextPageMarket']")
+
+    # secondary page elements
+    NEXT_PAGE_ARROW_BUTTON = (By.CSS_SELECTOR,"[wized='nextPageMLS']")
+
+    #market page elements
+    #PREVIOUS_PAGE_ARROW_BUTTON = (By.CSS_SELECTOR, "[wized='previousPageMarket']")
+
+    # secondary page elements
+    PREVIOUS_PAGE_ARROW_BUTTON = (By.CSS_SELECTOR, "[wized='previousPageMLS']")
+
+    #market page elements
+    #CURRENT_PAGE = (By.CSS_SELECTOR, "[wized='currentPageMarket']")
+
+    #secondary page elements
+    CURRENT_PAGE = (By.CSS_SELECTOR, "[wized='currentPageProperties']")
 
     def go_to_finalpage_pagination(self, *locator):
         self.driver.execute_script("window.scrollBy(0,2000)", "")

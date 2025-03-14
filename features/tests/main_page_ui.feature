@@ -11,6 +11,17 @@ Feature: Tests for Main page UI
     Then Go to the final page using the pagination button
     Then Go back to the first page using the pagination button
 
+  # Scenario 13 :
+  Scenario: User can open Secondary tab and go through the pagination
+    Given Open the main page
+    When Enter the email
+    Then Enter the password
+    Then Click continue button
+    Then User click on Secondary link at the left side in menu
+    Then Verify Secondary page opened
+    Then Go to the final page using the pagination button
+    Then Go back to the first page using the pagination button
+
 
   # Scenario 28 : User can filter by Announced
     Scenario: User can open off-plan tab and check for sale status as announced
