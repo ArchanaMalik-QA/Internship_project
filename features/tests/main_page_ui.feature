@@ -11,4 +11,12 @@ Feature: Tests for Main page UI
     Then Go to the final page using the pagination button
     Then Go back to the first page using the pagination button
 
-
+    Scenario: User can open off-plan tab and check for sale status as announced
+    Given Open the main page
+    When Enter the email
+    Then Enter the password
+    Then Click continue button
+    Then User click on off-plan link at the left side in menu
+    Then Verify off_plan page opened
+    Then Filter by sale status as Announced
+    Then Verify each product contains the Announced

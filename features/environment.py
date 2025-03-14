@@ -59,39 +59,37 @@ def browser_init(context, scenario_name):
     #     service=service
     # )
 #-------------------
-### BROWSERSTACK ###
-    # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-    # bs_user = 'archanamalik_8egyvF'
-    # bs_key = 'bXJdyy3gnxWpmqAkAsez'
-    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-    #
-    # options = Options()
-    # bstack_options = {
-    #     "os": "Windows",
-    #     "osVersion": "11",
-    #     'browserName': 'Chrome',
-    #     'sessionName': scenario_name,
-    # }
-    # options.set_capability('bstack:options', bstack_options)
-    # context.driver = webdriver.Remote(command_executor=url, options=options)
+# ### BROWSERSTACK ###
+#     ##Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
+#     bs_user = 'archanamalik_8egyvF'
+#     bs_key = 'bXJdyy3gnxWpmqAkAsez'
+#     url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+#
+#     options = Options()
+#     bstack_options = {
+#         "os": "Windows",
+#         "osVersion": "11",
+#         'browserName': 'Chrome',
+#         'sessionName': scenario_name,
+#     }
+#     options.set_capability('bstack:options', bstack_options)
+#     context.driver = webdriver.Remote(command_executor=url, options=options)
 #------------------
 
-    # Mobile emulation settings (example for an iPhone)
+    # # Mobile emulation settings (example for an iPhone)
     # mobile_emulation = {
-    #     "deviceName": "Nexus 5"  # You can use a predefined device name or custom device metrics
-    # }
-    mobile_emulation = {
-        "deviceMetrics": {"width": 430, "height": 932, "pixelRatio": 3.0},
-        "userAgent": "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19",
-        "clientHints": {"platform": "Android", "mobile": True}}
-    # Set up Chrome options
-    chrome_options = Options()
-    chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+    #     "deviceMetrics": {"width": 430, "height": 932, "pixelRatio": 3.0},
+    #     "userAgent": "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19",
+    #     "clientHints": {"platform": "Android", "mobile": True}}
+    #
+    # # Set up Chrome options
+    # chrome_options = Options()
+    # chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+    #
+    # # Initialize WebDriver with the mobile emulation settings
+    # context.driver = webdriver.Chrome(options=chrome_options)
 
-    # Initialize WebDriver with the mobile emulation settings
-    context.driver = webdriver.Chrome(options=chrome_options)
-    # Open a mobile website
-    #context.driver.get("https://soft.reelly.io")
+#----------------------------------------------
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)

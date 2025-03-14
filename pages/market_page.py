@@ -15,6 +15,7 @@ class MarketPage(BasePage):
         self.driver.find_element(By.CSS_SELECTOR, "[wized='mobileTabGame'],[text='Events']").click()
         sleep(10)
 
+
     def open_event_companies(self):
         elements = self.driver.find_elements(*self.MARKET_LINK)
         elements[1].click()
